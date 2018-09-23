@@ -31,11 +31,7 @@ extern "C" void forward_deconvolutional_layer_gpu(layer l, network net)
 
         gemm_gpu(1,0,m,n,k,1,a,m,b,n,0,c,n);
 
-<<<<<<< HEAD
         col2im_gpu(net.workspace, l.out_c, l.out_h, l.out_w, l.size, l.stride, l.pad, l.dilation, l.output_gpu+i*l.outputs);
-=======
-        col2im_gpu(net.workspace, l.out_c, l.out_h, l.out_w, l.size, l.stride, l.pad, l.output_gpu+i*l.outputs);
->>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
     }
     if (l.batch_normalize) {
         forward_batchnorm_layer_gpu(l, net);
@@ -70,11 +66,7 @@ extern "C" void backward_deconvolutional_layer_gpu(layer l, network net)
         float *c = l.weight_updates_gpu;
 
         im2col_gpu(l.delta_gpu + i*l.outputs, l.out_c, l.out_h, l.out_w, 
-<<<<<<< HEAD
                 l.size, l.stride, l.pad, l.dilation, b);
-=======
-                l.size, l.stride, l.pad, b);
->>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
         gemm_gpu(0,1,m,n,k,1,a,k,b,k,1,c,n);
 
         if(net.delta_gpu){

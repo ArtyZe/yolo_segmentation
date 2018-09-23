@@ -126,7 +126,10 @@ struct layer{
     void (*forward_gpu)   (struct layer, struct network);
     void (*backward_gpu)  (struct layer, struct network);
     void (*update_gpu)    (struct layer, update_args);
+<<<<<<< HEAD
 	int dilation;
+=======
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
     int batch_normalize;
     int shortcut;
     int batch;
@@ -550,8 +553,12 @@ typedef enum {
 } data_type;
 
 typedef struct load_args{
+<<<<<<< HEAD
 	int dilation;
 	int threads;
+=======
+    int threads;
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
     char **paths;
     char *path;
     int n;

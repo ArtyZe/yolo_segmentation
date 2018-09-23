@@ -15,19 +15,11 @@ float im2col_get_pixel(float *im, int height, int width, int channels,
 //https://github.com/BVLC/caffe/blob/master/LICENSE
 void im2col_cpu(float* data_im,
      int channels,  int height,  int width,
-<<<<<<< HEAD
      int ksize,  int stride, int pad, int dilation, float* data_col) 
 {
     int c,h,w;
     int height_col = (height + 2*pad - (dilation*(ksize-1)+1)) / stride + 1;
     int width_col = (width + 2*pad - (dilation*(ksize-1)+1)) / stride + 1;
-=======
-     int ksize,  int stride, int pad, float* data_col) 
-{
-    int c,h,w;
-    int height_col = (height + 2*pad - ksize) / stride + 1;
-    int width_col = (width + 2*pad - ksize) / stride + 1;
->>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
 
     int channels_col = channels * ksize * ksize;
     for (c = 0; c < channels_col; ++c) {

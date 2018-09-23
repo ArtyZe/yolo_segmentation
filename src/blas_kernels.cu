@@ -793,10 +793,6 @@ extern "C" void softmax_x_ent_gpu(int n, float *pred, float *truth, float *delta
 
 __global__ void logistic_x_ent_kernel(int n, float *pred, float *truth, float *delta, float *error)
 {
-<<<<<<< HEAD
-=======
-    int j,k;
->>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
     int i = (blockIdx.x + blockIdx.y*gridDim.x) * blockDim.x + threadIdx.x;
     float t_truth;
     if(i < n){
@@ -810,11 +806,7 @@ __global__ void logistic_x_ent_kernel(int n, float *pred, float *truth, float *d
         //printf("the truth label is %f  ------ the pred value is %f\n", t, p);
          //}
         error[i] = -t*log(p+.0000001) - (t_truth-t)*log(1-p+.0000001);
-<<<<<<< HEAD
         //delta[i] = error[i];
-=======
-        //delta[i] = t-p;
->>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
         delta[i] = t-p;
     }
 }

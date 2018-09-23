@@ -116,7 +116,11 @@ void forward_convolutional_layer_gpu(convolutional_layer l, network net)
             if (l.size == 1){
                 b = im;
             } else {
+<<<<<<< HEAD
                 im2col_gpu(im, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, l.dilation, b);
+=======
+                im2col_gpu(im, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, b);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
             }
             gemm_gpu(0,0,m,n,k,1,a,k,b,n,1,c,n);
         }
@@ -243,7 +247,11 @@ void backward_convolutional_layer_gpu(convolutional_layer l, network net)
             float *im  = net.input_gpu+(i*l.groups + j)*l.c/l.groups*l.h*l.w;
             float *imd = net.delta_gpu+(i*l.groups + j)*l.c/l.groups*l.h*l.w;
 
+<<<<<<< HEAD
             im2col_gpu(im, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, l.dilation, b);
+=======
+            im2col_gpu(im, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, b);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
             gemm_gpu(0,1,m,n,k,1,a,k,b,k,1,c,n);
 
             if (net.delta_gpu) {
@@ -258,7 +266,11 @@ void backward_convolutional_layer_gpu(convolutional_layer l, network net)
                 gemm_gpu(1,0,n,k,m,1,a,n,b,k,0,c,k);
 
                 if (l.size != 1) {
+<<<<<<< HEAD
                     col2im_gpu(net.workspace, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, l.dilation, imd);
+=======
+                    col2im_gpu(net.workspace, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, imd);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
                 }
                 if(l.binary || l.xnor) {
                     swap_binary(&l);

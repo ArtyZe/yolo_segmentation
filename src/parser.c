@@ -152,8 +152,12 @@ local_layer parse_local(list *options, size_params params)
 
 layer parse_deconvolutional(list *options, size_params params)
 {
+<<<<<<< HEAD
 	int dilation = option_find_int(options, "dilation", 1);
 	int n = option_find_int(options, "filters",1);
+=======
+    int n = option_find_int(options, "filters",1);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
     int size = option_find_int(options, "size",1);
     int stride = option_find_int(options, "stride",1);
 
@@ -171,7 +175,11 @@ layer parse_deconvolutional(list *options, size_params params)
     int padding = option_find_int_quiet(options, "padding",0);
     if(pad) padding = size/2;
 
+<<<<<<< HEAD
     layer l = make_deconvolutional_layer(batch,h,w,c,n,size,stride,padding, activation, batch_normalize, params.net->adam, dilation);
+=======
+    layer l = make_deconvolutional_layer(batch,h,w,c,n,size,stride,padding, activation, batch_normalize, params.net->adam);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
 
     return l;
 }
@@ -179,8 +187,12 @@ layer parse_deconvolutional(list *options, size_params params)
 
 convolutional_layer parse_convolutional(list *options, size_params params)
 {
+<<<<<<< HEAD
 	int dilation = option_find_int(options, "dilation", 1);
 	int n = option_find_int(options, "filters",1);
+=======
+    int n = option_find_int(options, "filters",1);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
     int size = option_find_int(options, "size",1);
     int stride = option_find_int(options, "stride",1);
     int pad = option_find_int_quiet(options, "pad",0);
@@ -201,7 +213,11 @@ convolutional_layer parse_convolutional(list *options, size_params params)
     int binary = option_find_int_quiet(options, "binary", 0);
     int xnor = option_find_int_quiet(options, "xnor", 0);
 
+<<<<<<< HEAD
     convolutional_layer layer = make_convolutional_layer(batch,h,w,c,n,groups,size,stride,padding,activation, batch_normalize, binary, xnor, params.net->adam, dilation);
+=======
+    convolutional_layer layer = make_convolutional_layer(batch,h,w,c,n,groups,size,stride,padding,activation, batch_normalize, binary, xnor, params.net->adam);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
     layer.flipped = option_find_int_quiet(options, "flipped", 0);
     layer.dot = option_find_float_quiet(options, "dot", 0);
 

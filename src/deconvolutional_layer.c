@@ -32,7 +32,11 @@ void bilinear_init(layer l)
 }
 
 
+<<<<<<< HEAD
 layer make_deconvolutional_layer(int batch, int h, int w, int c, int n, int size, int stride, int padding, ACTIVATION activation, int batch_normalize, int adam, int dilation)
+=======
+layer make_deconvolutional_layer(int batch, int h, int w, int c, int n, int size, int stride, int padding, ACTIVATION activation, int batch_normalize, int adam)
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
 {
     int i;
     layer l = {0};
@@ -48,7 +52,10 @@ layer make_deconvolutional_layer(int batch, int h, int w, int c, int n, int size
 
     l.nweights = c*n*size*size;
     l.nbiases = n;
+<<<<<<< HEAD
 	l.dilation = dilation;
+=======
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
 
     l.weights = calloc(c*n*size*size, sizeof(float));
     l.weight_updates = calloc(c*n*size*size, sizeof(float));
@@ -237,7 +244,11 @@ void forward_deconvolutional_layer(const layer l, network net)
 
         gemm_cpu(1,0,m,n,k,1,a,m,b,n,0,c,n);
 
+<<<<<<< HEAD
         col2im_cpu(net.workspace, l.out_c, l.out_h, l.out_w, l.size, l.stride, l.pad, l.dilation, l.output+i*l.outputs);
+=======
+        col2im_cpu(net.workspace, l.out_c, l.out_h, l.out_w, l.size, l.stride, l.pad, l.output+i*l.outputs);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
     }
     if (l.batch_normalize) {
         forward_batchnorm_layer(l, net);
@@ -271,7 +282,11 @@ void backward_deconvolutional_layer(layer l, network net)
         float *c = l.weight_updates;
 
         im2col_cpu(l.delta + i*l.outputs, l.out_c, l.out_h, l.out_w, 
+<<<<<<< HEAD
                 l.size, l.stride, l.pad, l.dilation, b);
+=======
+                l.size, l.stride, l.pad, b);
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
         gemm_cpu(0,1,m,n,k,1,a,k,b,k,1,c,n);
 
         if(net.delta){

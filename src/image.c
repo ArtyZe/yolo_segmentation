@@ -848,11 +848,19 @@ image rotate_crop_image_seg(image im, float rad, float s, int w, int h, float dx
                 float ry = sin(rad)*((x - w/2.)/s*aspect + dx/s*aspect) + cos(rad)*((y - h/2.)/s + dy/s) + cy;
                 float val = bilinear_interpolate(im, rx, ry, c);
                 //if(val!=0) printf("the value is %f\n",val);
+<<<<<<< HEAD
                 //if(val >=0.25)
                 //{
                 //  val = 1;
                 //}else{
                 //  val = 0;
+=======
+                //if(val!=0)
+                //{
+                //  val = 0.9995;
+                //}else{
+                //  val = 0.0005;
+>>>>>>> d2bad383be6fc51a225bdc438fe8661eec5816ee
                 //}
                 set_pixel(rot, x, y, c, val);
             }

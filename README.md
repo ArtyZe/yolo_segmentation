@@ -13,9 +13,7 @@ Now I have gave my cfg file and weights file in:
 
 	https://pan.baidu.com/s/1vibb9nlfIV3NvBreBSaJbA
   
-and the password is:  
-  
-	ncfb
+and the password is:  ncfb
 
 [The Commond to Run My Project]
 
@@ -28,6 +26,7 @@ Test:
 	./darknet segmenter test [data_file path] cfg/segment.cfg [weights file] [image path]
 
 Merge two images:
+
 	python Merge.py
 	
 and you will get the mask image named final.png
@@ -42,9 +41,9 @@ If you want to see my Result Video, I have put it in: https://pan.baidu.com/s/1u
 
 What I did to change Yolo for image segmentation, I have written a blog in: https://blog.csdn.net/Artyze/article/details/82721147
 
-After I will do some work in semantic segmentation with yolo,
+After I will do some work in semantic segmentation with yolo.
 
-and if you want to do something with Yolo with me, contact me with E-mail.
+If you want to do something with Yolo with me, contact me with E-mail.
   
 
 

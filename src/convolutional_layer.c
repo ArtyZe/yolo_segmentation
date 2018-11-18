@@ -65,12 +65,12 @@ void binarize_input(float *input, int n, int size, float *binary)
 
 int convolutional_out_height(convolutional_layer l)
 {
-    return (l.h + 2*l.pad - (l.dilation * (l.size - 1) + 1)) / l.stride + 1;
+    return (l.h + 2*l.pad - l.size) / l.stride + 1;
 }
 
 int convolutional_out_width(convolutional_layer l)
 {
-    return (l.w + 2*l.pad - (l.dilation * (l.size - 1) + 1)) / l.stride + 1;
+    return (l.w + 2*l.pad - l.size) / l.stride + 1;
 }
 
 image get_convolutional_image(convolutional_layer l)
@@ -173,14 +173,13 @@ void cudnn_convolutional_setup(layer *l)
 #endif
 #endif
 
-convolutional_layer make_convolutional_layer(int batch, int h, int w, int c, int n, int groups, int size, int stride, int padding, ACTIVATION activation, int batch_normalize, int binary, int xnor, int adam, int dilation)
+convolutional_layer make_convolutional_layer(int batch, int h, int w, int c, int n, int groups, int size, int stride, int padding, ACTIVATION activation, int batch_normalize, int binary, int xnor, int adam)
 {
-    int i,j;
+    int i;
     convolutional_layer l = {0};
     l.type = CONVOLUTIONAL;
 
-	l.dilation = dilation;
-	l.groups = groups;
+    l.groups = groups;
     l.h = h;
     l.w = w;
     l.c = c;
@@ -190,7 +189,6 @@ convolutional_layer make_convolutional_layer(int batch, int h, int w, int c, int
     l.batch = batch;
     l.stride = stride;
     l.size = size;
-    //l.size = l.dilation * (size - 1) + 1;
     l.pad = padding;
     l.batch_normalize = batch_normalize;
 
@@ -200,7 +198,7 @@ convolutional_layer make_convolutional_layer(int batch, int h, int w, int c, int
     l.biases = calloc(n, sizeof(float));
     l.bias_updates = calloc(n, sizeof(float));
 
-    l.nweights = c/groups*n*l.size*l.size;
+    l.nweights = c/groups*n*size*size;
     l.nbiases = n;
 
     // float scale = 1./sqrt(size*size*c);
@@ -208,16 +206,7 @@ convolutional_layer make_convolutional_layer(int batch, int h, int w, int c, int
     //printf("convscale %f\n", scale);
     //scale = .02;
     //for(i = 0; i < c*n*size*size; ++i) l.weights[i] = scale*rand_uniform(-1, 1);
-    //for(i = 0; i < l.nweights; ++i) l.weights[i] = scale*rand_normal();
-    for(i =0; i<l.size; i++){
-			for(j = 0; j<l.size; j++){
-				if(i%l.dilation == 0 || j%l.dilation ==0){
-					l.weights[i*l.w+j] = scale*rand_normal();
-					}else{
-					l.weights[i*l.w+j] = 0;
-			}
-		}
-	}
+    for(i = 0; i < l.nweights; ++i) l.weights[i] = scale*rand_normal();
     int out_w = convolutional_out_width(l);
     int out_h = convolutional_out_height(l);
     l.out_h = out_h;
@@ -465,6 +454,7 @@ void forward_convolutional_layer(convolutional_layer l, network net)
         binarize_cpu(net.input, l.c*l.h*l.w*l.batch, l.binary_input);
         net.input = l.binary_input;
     }
+
     int m = l.n/l.groups;
     int k = l.size*l.size*l.c/l.groups;
     int n = l.out_w*l.out_h;
@@ -478,7 +468,7 @@ void forward_convolutional_layer(convolutional_layer l, network net)
             if (l.size == 1) {
                 b = im;
             } else {
-                im2col_cpu(im, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, l.dilation, b);
+                im2col_cpu(im, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, b);
             }
             gemm(0,0,m,n,k,1,a,k,b,n,1,c,n);
         }
@@ -522,7 +512,7 @@ void backward_convolutional_layer(convolutional_layer l, network net)
                 b = im;
             } else {
                 im2col_cpu(im, l.c/l.groups, l.h, l.w, 
-                        l.size, l.stride, l.pad, l.dilation, b);
+                        l.size, l.stride, l.pad, b);
             }
 
             gemm(0,1,m,n,k,1,a,k,b,k,1,c,n);
@@ -538,7 +528,7 @@ void backward_convolutional_layer(convolutional_layer l, network net)
                 gemm(1,0,n,k,m,1,a,n,b,k,0,c,k);
 
                 if (l.size != 1) {
-                    col2im_cpu(net.workspace, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, l.dilation, imd);  //only need to change this function
+                    col2im_cpu(net.workspace, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, imd);
                 }
             }
         }

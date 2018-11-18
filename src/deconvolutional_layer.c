@@ -32,7 +32,7 @@ void bilinear_init(layer l)
 }
 
 
-layer make_deconvolutional_layer(int batch, int h, int w, int c, int n, int size, int stride, int padding, ACTIVATION activation, int batch_normalize, int adam, int dilation)
+layer make_deconvolutional_layer(int batch, int h, int w, int c, int n, int size, int stride, int padding, ACTIVATION activation, int batch_normalize, int adam)
 {
     int i;
     layer l = {0};
@@ -48,7 +48,6 @@ layer make_deconvolutional_layer(int batch, int h, int w, int c, int n, int size
 
     l.nweights = c*n*size*size;
     l.nbiases = n;
-	l.dilation = dilation;
 
     l.weights = calloc(c*n*size*size, sizeof(float));
     l.weight_updates = calloc(c*n*size*size, sizeof(float));
@@ -237,7 +236,7 @@ void forward_deconvolutional_layer(const layer l, network net)
 
         gemm_cpu(1,0,m,n,k,1,a,m,b,n,0,c,n);
 
-        col2im_cpu(net.workspace, l.out_c, l.out_h, l.out_w, l.size, l.stride, l.pad, l.dilation, l.output+i*l.outputs);
+        col2im_cpu(net.workspace, l.out_c, l.out_h, l.out_w, l.size, l.stride, l.pad, l.output+i*l.outputs);
     }
     if (l.batch_normalize) {
         forward_batchnorm_layer(l, net);
@@ -271,7 +270,7 @@ void backward_deconvolutional_layer(layer l, network net)
         float *c = l.weight_updates;
 
         im2col_cpu(l.delta + i*l.outputs, l.out_c, l.out_h, l.out_w, 
-                l.size, l.stride, l.pad, l.dilation, b);
+                l.size, l.stride, l.pad, b);
         gemm_cpu(0,1,m,n,k,1,a,k,b,k,1,c,n);
 
         if(net.delta){

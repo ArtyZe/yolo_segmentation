@@ -466,6 +466,7 @@ image get_network_image_layer(network *net, int i)
 image get_network_image(network *net)
 {
     int i;
+	printf("the net n is %d\n", net->n);
     for(i = net->n-1; i >= 0; --i){
         image m = get_network_image_layer(net, i);
         if(m.h != 0) return m;

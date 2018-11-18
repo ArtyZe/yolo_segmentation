@@ -13,11 +13,11 @@ void col2im_add_pixel(float *im, int height, int width, int channels,
 //This one might be too, can't remember.
 void col2im_cpu(float* data_col,
          int channels,  int height,  int width,
-         int ksize,  int stride, int pad, int dilation, float* data_im) 
+         int ksize,  int stride, int pad, float* data_im) 
 {
     int c,h,w;
-    int height_col = (height + 2*pad - (dilation*(ksize-1)+1)) / stride + 1;
-    int width_col = (width + 2*pad - (dilation*(ksize-1)+1)) / stride + 1;
+    int height_col = (height + 2*pad - ksize) / stride + 1;
+    int width_col = (width + 2*pad - ksize) / stride + 1;
 
     int channels_col = channels * ksize * ksize;
     for (c = 0; c < channels_col; ++c) {
@@ -26,8 +26,8 @@ void col2im_cpu(float* data_col,
         int c_im = c / ksize / ksize;
         for (h = 0; h < height_col; ++h) {
             for (w = 0; w < width_col; ++w) {
-                int im_row = h_offset + h * stride*dilation;
-                int im_col = w_offset + w * stride*dilation;
+                int im_row = h_offset + h * stride;
+                int im_col = w_offset + w * stride;
                 int col_index = (c * height_col + h) * width_col + w;
                 double val = data_col[col_index];
                 col2im_add_pixel(data_im, height, width, channels,

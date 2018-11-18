@@ -94,7 +94,6 @@ void forward_local_layer(const local_layer l, network net)
     int out_w = local_out_width(l);
     int i, j;
     int locations = out_h * out_w;
-	int dilation = 1;
 
     for(i = 0; i < l.batch; ++i){
         copy_cpu(l.outputs, l.biases, 1, l.output + i*l.outputs, 1);
@@ -103,7 +102,7 @@ void forward_local_layer(const local_layer l, network net)
     for(i = 0; i < l.batch; ++i){
         float *input = net.input + i*l.w*l.h*l.c;
         im2col_cpu(input, l.c, l.h, l.w, 
-                l.size, l.stride, l.pad, dilation, net.workspace);
+                l.size, l.stride, l.pad, net.workspace);
         float *output = l.output + i*l.outputs;
         for(j = 0; j < locations; ++j){
             float *a = l.weights + j*l.size*l.size*l.c*l.n;
@@ -123,7 +122,6 @@ void forward_local_layer(const local_layer l, network net)
 void backward_local_layer(local_layer l, network net)
 {
     int i, j;
-	int dilation = 1;
     int locations = l.out_w*l.out_h;
 
     gradient_array(l.output, l.outputs*l.batch, l.activation, l.delta);
@@ -135,7 +133,7 @@ void backward_local_layer(local_layer l, network net)
     for(i = 0; i < l.batch; ++i){
         float *input = net.input + i*l.w*l.h*l.c;
         im2col_cpu(input, l.c, l.h, l.w, 
-                l.size, l.stride, l.pad, dilation, net.workspace);
+                l.size, l.stride, l.pad, net.workspace);
 
         for(j = 0; j < locations; ++j){ 
             float *a = l.delta + i*l.outputs + j;
@@ -161,7 +159,7 @@ void backward_local_layer(local_layer l, network net)
                 gemm(1,0,m,n,k,1,a,m,b,locations,0,c,locations);
             }
 
-            col2im_cpu(net.workspace, l.c,  l.h,  l.w,  l.size,  l.stride, l.pad, dilation, net.delta+i*l.c*l.h*l.w);
+            col2im_cpu(net.workspace, l.c,  l.h,  l.w,  l.size,  l.stride, l.pad, net.delta+i*l.c*l.h*l.w);
         }
     }
 }
@@ -191,7 +189,6 @@ void forward_local_layer_gpu(const local_layer l, network net)
     int out_w = local_out_width(l);
     int i, j;
     int locations = out_h * out_w;
-	int dilation = 1;
 
     for(i = 0; i < l.batch; ++i){
         copy_gpu(l.outputs, l.biases_gpu, 1, l.output_gpu + i*l.outputs, 1);
@@ -200,7 +197,7 @@ void forward_local_layer_gpu(const local_layer l, network net)
     for(i = 0; i < l.batch; ++i){
         float *input = net.input_gpu + i*l.w*l.h*l.c;
         im2col_gpu(input, l.c, l.h, l.w, 
-                l.size, l.stride, l.pad, dilation, net.workspace);
+                l.size, l.stride, l.pad, net.workspace);
         float *output = l.output_gpu + i*l.outputs;
         for(j = 0; j < locations; ++j){
             float *a = l.weights_gpu + j*l.size*l.size*l.c*l.n;
@@ -220,7 +217,6 @@ void forward_local_layer_gpu(const local_layer l, network net)
 void backward_local_layer_gpu(local_layer l, network net)
 {
     int i, j;
-	int dilation =1;
     int locations = l.out_w*l.out_h;
 
     gradient_array_gpu(l.output_gpu, l.outputs*l.batch, l.activation, l.delta_gpu);
@@ -231,7 +227,7 @@ void backward_local_layer_gpu(local_layer l, network net)
     for(i = 0; i < l.batch; ++i){
         float *input = net.input_gpu + i*l.w*l.h*l.c;
         im2col_gpu(input, l.c, l.h, l.w, 
-                l.size, l.stride, l.pad, dilation, net.workspace);
+                l.size, l.stride, l.pad, net.workspace);
 
         for(j = 0; j < locations; ++j){ 
             float *a = l.delta_gpu + i*l.outputs + j;
@@ -256,7 +252,8 @@ void backward_local_layer_gpu(local_layer l, network net)
 
                 gemm_gpu(1,0,m,n,k,1,a,m,b,locations,0,c,locations);
             }
-            col2im_gpu(net.workspace, l.c,  l.h,  l.w,  l.size,  l.stride, l.pad, dilation, net.delta_gpu+i*l.c*l.h*l.w);
+
+            col2im_gpu(net.workspace, l.c,  l.h,  l.w,  l.size,  l.stride, l.pad, net.delta_gpu+i*l.c*l.h*l.w);
         }
     }
 }

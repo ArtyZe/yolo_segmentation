@@ -11,15 +11,15 @@ Now I have gave my cfg file and weights file in:  https://pan.baidu.com/s/1vibb9
 [The Commond to Run My Project]
 Train: just like what I have anwsered in Issues,
 
- ./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you] 
+	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you] 
 
 Test:
-  ./darknet segmenter test [data_file path] cfg/segment.cfg [weights file] [image path]
+	./darknet segmenter test [data_file path] cfg/segment.cfg [weights file] [image path]
 
 Merge two images:
 	python Merge.py
 	
-	and you will get the mask image named final.png
+and you will get the mask image named final.png
 
 Test image:  
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/orig.png)

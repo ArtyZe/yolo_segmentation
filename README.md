@@ -14,6 +14,7 @@ Train: just like what I have anwsered in Issues,
 	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you] 
 
 Test:
+
 	./darknet segmenter test [data_file path] cfg/segment.cfg [weights file] [image path]
 
 Merge two images:

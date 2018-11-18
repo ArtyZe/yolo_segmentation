@@ -9,7 +9,7 @@ This is my third version, I added dilation convolutional, and now it has not so 
 
 I will continue to update afterwards, please stay tuned.
 
-Now I have gave my cfg file and weights file in:
+Now I have put my cfg file and weights file in:
 
 	https://pan.baidu.com/s/1vibb9nlfIV3NvBreBSaJbA
   

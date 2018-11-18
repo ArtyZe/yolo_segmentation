@@ -1,7 +1,7 @@
 classes= 1
-train = /home/user/Desktop/YOLO_train/train.txt 
-valid = /home/user/Desktop/YOLO_train/train.txt
-names = /home/user/Desktop/darknet_maskrcnn/data/maskyolo.names
-backup = /home/user/Desktop/darknet/backup
-results = /home/user/Desktop/darknet_maskrcnn/darknet/cfg/maskyolo/results/
-labels = /home/user/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/
+train = /home/gaoyang/Desktop/YOLO_train/train.txt 
+valid = /home/gaoyang/Desktop/YOLO_train/train.txt
+names = /home/gaoyang/Desktop/darknet_maskrcnn/data/maskyolo.names
+backup = /home/gaoyang/Desktop/darknet/backup
+results = /home/gaoyang/Desktop/darknet_maskrcnn/darknet/cfg/maskyolo/results/
+labels = /home/gaoyang/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/

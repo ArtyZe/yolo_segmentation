@@ -111,18 +111,18 @@ void forward_iseg_layer(const layer l, network net)
 
         memset(l.counts, 0, 90*sizeof(int));
         for(i = 0; i < 90; ++i){
-            fill_cpu(ids, 0, l.sums[i], 1);
+            fill_cpu(ids, 0, l.sums[i], 1);   //set all 90 sums to 0
             
-            int c = net.truth[b*l.truths + i*(l.w*l.h+1)];
+            int c = net.truth[b*l.truths + i*(l.w*l.h+1)];  //the class of the i-th box in truth label
             if(c < 0) break;
             // add up metric embeddings for each instance
             for(k = 0; k < l.w*l.h; ++k){
                 int index = b*l.outputs + c*l.w*l.h + k;
-                float v = net.truth[b*l.truths + i*(l.w*l.h + 1) + 1 + k];
-                if(v){
-                    l.delta[index] = v - l.output[index];
-                    axpy_cpu(ids, 1, l.output + b*l.outputs + l.classes*l.w*l.h + k, l.w*l.h, l.sums[i], 1);
-                    ++l.counts[i];
+                float v = net.truth[b*l.truths + i*(l.w*l.h + 1) + 1 + k];  //直接找到c类别所在的那一层w*h
+                if(v){   //假如第k个点label值为1，这里需要非常注意，这可能只是第c层的所有正样本点的一部分，比如说第i个label目标有100个正样本点
+                    l.delta[index] = v - l.output[index];    //该层该点处的delta值（作者目前大体思路就是只管正样本点，负样本点就保持同样的更新梯度不管）
+                    axpy_cpu(ids, 1, l.output + b*l.outputs + l.classes*l.w*l.h + k, l.w*l.h, l.sums[i], 1);//将第每一个id层的100个点的输出和给到l.sum[i][id]值
+                    ++l.counts[i]; //第i个label中目标正样本像素点的数量
                 }
             }
         }
@@ -138,18 +138,18 @@ void forward_iseg_layer(const layer l, network net)
                     float sum = 0;
                     for(z = 0; z < ids; ++z){
                         int index = b*l.outputs + (l.classes + z)*l.w*l.h + k;
-                        sum += pow(l.sums[i][z]/l.counts[i] - l.output[index], 2);
-                    }
-                    mse[i] += sum;
+                        sum += pow(l.sums[i][z]/l.counts[i] - l.output[index], 2);  //l.sums[i][z]/l.counts[i]就是这一层第i个样本正样本点的输出平均值，然后减去第z层的k这一点的输出值
+                    }                                                               //要对所有的输出做均方
+                    mse[i] += sum;  //将ids层的100个像素点的所有的差方进行相加
                 }
             }
-            mse[i] /= l.counts[i];
+            mse[i] /= l.counts[i];   //100个点的平均差方
         }
 
         // Calculate average embedding
         for(i = 0; i < 90; ++i){
-            if(!l.counts[i]) continue;
-            scal_cpu(ids, 1.f/l.counts[i], l.sums[i], 1);
+            if(!l.counts[i]) continue; //排除c==-1的目标（truth中）
+            scal_cpu(ids, 1.f/l.counts[i], l.sums[i], 1);//同样求第i个label目标在输出的每一个id层的100个像素点的输出平均值
             if(b == 0 && net.gpu_index == 0){
                 printf("%4d, %6.3f, ", l.counts[i], mse[i]);
                 for(j = 0; j < ids; ++j){
@@ -171,10 +171,10 @@ void forward_iseg_layer(const layer l, network net)
                         int z;
                         for(z = 0; z < ids; ++z){
                             int index = b*l.outputs + (l.classes + z)*l.w*l.h + k;
-                            float diff = l.sums[j][z] - l.output[index];
+                            float diff = l.sums[j][z] - l.output[index];   //用所有id层的所有目标区域的和减去在该层的k点的输出值
                             if (j == i) l.delta[index] +=   diff < 0? -.1 : .1;
-                            else        l.delta[index] += -(diff < 0? -.1 : .1);
-                        }
+                            else        l.delta[index] += -(diff < 0? -.1 : .1);   //这里是算法的关键，将第id层的不同目标区域分开，也就是car1和car2的输出区域区分开；同时用ids*l.counts维
+                        }                                                          //度的向量去表示一个目标，这也是一种降维的方式
                     }
                 }
             }

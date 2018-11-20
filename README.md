@@ -9,12 +9,6 @@ This is my third version, I added dilation convolutional, and now it has not so 
 
 I will continue to update afterwards, please stay tuned.
 
-Now I have put my cfg file and weights file in:
-
-	https://pan.baidu.com/s/1vibb9nlfIV3NvBreBSaJbA
-  
-and the password is:  ncfb
-
 [The Commond to Run My Project]
 
 Train: just like what I have anwsered in Issues,
@@ -43,7 +37,7 @@ What I did to change Yolo for image segmentation, I have written a blog in: http
 
 After I will do some work in semantic segmentation with yolo.
 
-If you want to do something with Yolo with me, contact me with E-mail.
+If you want to get the cfg and weights file, or you want to do something with Yolo with me, contact me with E-mail.
   
 
 

@@ -37,7 +37,7 @@ What I did to change Yolo for image segmentation, I have written a blog in: http
 
 After I will do some work in semantic segmentation with yolo.
 
-If you want to get the cfg and weights file, or you want to do something with Yolo with me, contact me with E-mail.
+If you want to get the cfg and weights file, or you want to do something with Yolo with me, contact me with E-mail: Gaoyang917528@163.com.
   
 
 

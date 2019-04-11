@@ -10,7 +10,7 @@ This is my third version, I added dilation convolutional, and now it has not so 
 I will continue to update afterwards, please stay tuned.
 
 [The Commond to Run My Project]
-
+=========
 Train: just like what I have anwsered in Issues,
 
 	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you] 
@@ -31,31 +31,27 @@ Test image:
 Output image:
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png)
 
-If you want to see my Result Video, I have put it in: https://pan.baidu.com/s/1uJwFYLHEQ9DGFZ8RkGuagg, and the password is: ic3q
-
-What I did to change Yolo for image segmentation, I have written a blog in: https://blog.csdn.net/Artyze/article/details/82721147
-
-After I will do some work in semantic segmentation with yolo.
-
-If you want to get the cfg and weights file, or you want to do something with Yolo with me, contact me with E-mail: Gaoyang917528@163.com.
-  
-
 [How to Train with Your Own Dataset ?]  
+========  
 
 The Way is so easy, you only need three files, for example with cityscape dataset:
 
-Colorful Original Image:
+Colorful Original Image:  
+
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_leftImg8bit.png)
 
 Lable Image(I only have one class so the label image with pixels 0101, as 0 is background and 1 is object
 
-if you have 2 classes, the label image pixel value should be 012 and so on:
+if you have 2 classes, the label image pixel value should be 012 and so on:  
+
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_gtFine_instanceIds.png)
 
-maybe you can't see the pixels with value 1 because it's close to 0, just see the image below(not for training, just watch as example):
+maybe you can't see the pixels with value 1 because it's close to 0, just see the image below(not for training, just watch as example):  
+
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_gtFine_instanceIds_1.png)
 
 Steps to train you own dataset:  
+-----------------  
 
       1. prepare train images and label images
 		 (I have added 
@@ -69,4 +65,13 @@ Steps to train you own dataset:
 	
 	  4. start train
 	  
-	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you] 
+	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you]  
+	
+If you want to see my Result Video, I have put it in: https://pan.baidu.com/s/1uJwFYLHEQ9DGFZ8RkGuagg, and the password is: ic3q
+
+What I did to change Yolo for image segmentation, I have written a blog in: https://blog.csdn.net/Artyze/article/details/82721147
+
+After I will do some work in semantic segmentation with yolo.
+
+If you want to get the cfg and weights file, or you want to do something with Yolo with me, contact me with E-mail: Gaoyang917528@163.com.
+  

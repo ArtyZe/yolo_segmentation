@@ -37,10 +37,12 @@ Output image:
 The Way is so easy, you only need three files, for example with cityscape dataset:
 
 Colorful Original Image:  
-
+------------
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_leftImg8bit.png)
 
-Lable Image(I only have one class so the label image with pixels 0101, as 0 is background and 1 is object
+Lable Image:
+---------
+(I only have one class so the label image with pixels 0101, as 0 is background and 1 is object
 
 if you have 2 classes, the label image pixel value should be 012 and so on:  
 

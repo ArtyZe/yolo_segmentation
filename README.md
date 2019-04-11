@@ -40,4 +40,31 @@ After I will do some work in semantic segmentation with yolo.
 If you want to get the cfg and weights file, or you want to do something with Yolo with me, contact me with E-mail: Gaoyang917528@163.com.
   
 
+[How to Train with Your Own Dataset ?]
+The Way is so easy, you only need three files, for example with cityscape dataset:
 
+Colorful Original Image:
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_leftImg8bit.png)
+
+Lable Image(I only have one class so the label image with pixels 0101, as 0 is background and 1 is object
+
+if you have 2 classes, the label image pixel value should be 012 and so on:
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_leftImg8bit.png)
+
+maybe you can't see the pixels with value 1 because it's close to 0, just see the image below(not for training, just watch as example):
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_gtFine_instanceIds_1.png)
+
+Steps to train you own dataset:
+      1. prepare train images and label images
+		 (I have added 
+				find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath); 
+		  in my code according to my pictures, you have to change it according to your image name) like above images
+		  
+      2. put label images and original images together;
+      
+      3. generate the train.list file just like:
+			/home/user/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/jena_000012_000019_leftImg8bit.png
+	
+	  4. start train
+	  
+	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you] 

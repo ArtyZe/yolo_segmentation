@@ -34,7 +34,11 @@ Output image:
 [How to Train with Your Own Dataset ?]  
 ========  
 
-The Way is so easy, you only need three files, for example with cityscape dataset:
+The Way is so easy, you only need three files:  
+original colorful image; 0101 label image; train.list  
+------------  
+
+for example with cityscape dataset:
 
 Colorful Original Image:  
 ------------

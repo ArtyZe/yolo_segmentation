@@ -76,7 +76,7 @@ Steps to train you own dataset:
 	
 	  4. start train
 	  
-	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you]  
+		./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you]  
 	
 If you want to see my Result Video, I have put it in: https://pan.baidu.com/s/1uJwFYLHEQ9DGFZ8RkGuagg, and the password is: ic3q
 

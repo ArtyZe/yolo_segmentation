@@ -35,7 +35,8 @@ Output image:
 ========  
 
 The Way is so easy, you only need three files:  
-original colorful image; 0101 label image; train.list  
+ 
+	original colorful image; 0101 label image; train.list  
 ------------  
 
 for example with cityscape dataset:
@@ -59,15 +60,16 @@ maybe you can't see the pixels with value 1 because it's close to 0, just see th
 Steps to train you own dataset:  
 -----------------  
 
-      1. prepare train images and label images
-		 (I have added 
-				find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath); 
-		  in my code according to my pictures, you have to change it according to your image name) like above images
+      1. prepare train images and label images like above images
+		 I have added below function call in my code according to my pictures, you have to change it according to your image name
+		  #######################################################
+		  ###find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath); 
+		  #######################################################
 		  
       2. put label images and original images together;
       
       3. generate the train.list file just like:
-			/home/user/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/jena_000012_000019_leftImg8bit.png
+		/home/user/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/jena_000012_000019_leftImg8bit.png
 	
 	  4. start train
 	  

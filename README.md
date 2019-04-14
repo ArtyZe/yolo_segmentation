@@ -1,9 +1,7 @@
 # yolo_segmentation
 the code is to get segmentation image by darknet
 
-In the process of my project, I have referenced nithi89/unet_darknet in some points
-
-and nithilan has give me many important advices, thanks to him, and if you have interest you can visit his homepage.
+In the process of my project, I have referenced nithi89/unet_darknet in some points and nithilan has give me many important advices, thanks to him, and if you have interest you can visit his homepage.
 
 This is my third version, I added dilation convolutional, and now it has not so perfect result, but i think it's good enough for me. 
 
@@ -11,7 +9,7 @@ I will continue to update afterwards, please stay tuned.
 
 [The Commond to Run My Project]
 =========
-Train: just like what I have anwsered in Issues,
+Train: 
 
 	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you] 
 
@@ -23,7 +21,7 @@ Merge two images:
 
 	python Merge.py
 	
-and you will get the mask image named final.png
+And you will get the mask image named final.png
 
 Test image:  
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/orig.png)
@@ -46,18 +44,18 @@ Colorful Original Image:
 
 Lable Image:
 ---------
-####I only have one class so the label image with pixels 0101, as 0 is background and 1 is object if you have 2 classes, the label image pixel value should be 012 and so on:  
+I only have one class so the label image with pixels 0101, as 0 is background and 1 is object. If you have 2 classes, the label image pixel value should be 012 and so on:  
 
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_gtFine_instanceIds.png)
 
-####maybe you can't see the pixels with value 1 because it's close to 0, just see the image below(not for training, just watch as example):  
+Maybe you can't see the pixels with value 1 because it's close to 0, just see the image below(not for training, just watch as example):  
 
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_gtFine_instanceIds_1.png)
 
 Steps to train you own dataset:  
 -----------------  
 
-      ###1. prepare train images and label images like above images  
+      1. prepare train images and label images like above images  
 	  
 		 I have added below function call in my code according to my pictures, you have to change it according to your image name  
 		 
@@ -65,13 +63,13 @@ Steps to train you own dataset:
 		 find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath); 
 		 #######################################################
 		  
-      ###2. put label images and original images together;
+      2. put label images and original images together;
       
-      ###3. generate the train.list file just like:  
+      3. generate the train.list file just like:  
 	  
 		/home/user/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/jena_000012_000019_leftImg8bit.png
 	
-	  ###4. start train
+	  4. start train
 	  
 		./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you]  
 	

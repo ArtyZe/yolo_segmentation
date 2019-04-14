@@ -1,5 +1,5 @@
 # yolo_segmentation
-the code is to get segmentation image by darknet
+The code is to get segmentation image by darknet
 
 In the process of my project, I have referenced nithi89/unet_darknet in some points and nithilan has give me many important  
 
@@ -63,21 +63,21 @@ Steps to train you own dataset:
 
       1. prepare train images and label images like above images  
 	  
-	  I have added below function call in my code according to my pictures, you have to change it according to your image name  
+	    I have added below function call in my code according to my pictures, you have to change it according to your image name  
 		 
-	  #######################################################
-	  find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath); 
-	  #######################################################
+	    #######################################################
+	    find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath); 
+	    #######################################################
 		  
       2. put label images and original images together
       
       3. generate the train.list file just like:  
 	  
-	  /home/user/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/jena_000012_000019_leftImg8bit.png
+	    /home/user/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/jena_000012_000019_leftImg8bit.png
 	
 	  4. start train
 	  
-	  ./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you]  
+	    ./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you]  
 	
 If you want to see my Result Video, I have put it in: https://pan.baidu.com/s/1uJwFYLHEQ9DGFZ8RkGuagg, and the password is: ic3q
 

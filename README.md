@@ -81,6 +81,8 @@ Steps to train you own dataset:
 	
 If you want to see my Result Video, I have put it in: https://pan.baidu.com/s/1uJwFYLHEQ9DGFZ8RkGuagg, and the password is: ic3q
 
+If you want to get how to change the code, see https://github.com/ArtyZe/yolo_segmentation/blob/master/Train_Details.md     
+
 What I did to change Yolo for image segmentation, I have written a blog in: https://blog.csdn.net/Artyze/article/details/82721147
 
 After I will do some work in semantic segmentation with yolo.

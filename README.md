@@ -31,6 +31,13 @@ Test image:
 Output image:
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png)
 
+[Pretrain weights file and cfg file]  
+========  
+
+1. https://www.dropbox.com/sh/9mv29eoy9fa35ie/AAAq-53zo8NuD3cjzWFZfMboa?dl=0
+2. https://pan.baidu.com/s/1vibb9nlfIV3NvBreBSaJbA 
+   password: ncfb
+   
 [How to Train with Your Own Dataset ?]  
 ========  
 
@@ -87,5 +94,5 @@ What I did to change Yolo for image segmentation, I have written a blog in: http
 
 After I will do some work in semantic segmentation with yolo.
 
-If you want to get the cfg and weights file, or you want to do something with Yolo with me, contact me with E-mail: Gaoyang917528@163.com.
+If you want to do something with Yolo with me, contact me with E-mail: Gaoyang917528@163.com.
   

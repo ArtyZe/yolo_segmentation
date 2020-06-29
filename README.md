@@ -32,10 +32,10 @@ Output image:
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/output.png)
 
 Merge them together image:(not so good, 1. more epochs; 2. deeper or more complex backbone)
-<figure class="half">
+<certer class="half">
     <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png">
     <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png">
-</figure>
+</certer>
 
 [Pretrain weights file and cfg file]  
 ========  
@@ -59,15 +59,11 @@ For example with cityscape dataset:
 
 Colorful Original Image:  
 ------------
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_leftImg8bit.png)
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/aachen_000000_000019_leftImg8bit.png)
 
 Lable Image:
 ---------
 I only have one class so the label image, as 0 is background and others are multi classes. If you have 2 classes, the label image pixel value should be 012 and so on:  
-
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000000_000019_leftImg8bit.png)
-
-Maybe you can't see the pixels with value 1 because it's close to 0, just see the image below(not for training, just watch as example):  
 
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000000_000019_gtFine_labelIds.png)
 

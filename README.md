@@ -32,7 +32,10 @@ Output image:
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/output.png)
 
 Merge them together image:(not so good, 1. more epochs; 2. deeper or more complex backbone)
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png)![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png)
+<figure class="half">
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png">
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png">
+</figure>
 
 [Pretrain weights file and cfg file]  
 ========  

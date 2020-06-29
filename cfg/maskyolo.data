@@ -1,7 +1,7 @@
-classes= 1
-train = /home/gaoyang/Desktop/YOLO_train/train.txt 
-valid = /home/gaoyang/Desktop/YOLO_train/train.txt
-names = /home/gaoyang/Desktop/darknet_maskrcnn/data/maskyolo.names
-backup = /home/gaoyang/Desktop/darknet/backup
+classes= 34
+train = /workspace/ygao/benchmark/Mask_Image/train.txt
+valid = /workspace/ygao/benchmark/Mask_Image/train.txt
+names = /data/maskyolo.names
+backup = backup
 results = /home/gaoyang/Desktop/darknet_maskrcnn/darknet/cfg/maskyolo/results/
 labels = /home/gaoyang/Desktop/YOLO_train/leftImg8bit/train/aachen_resize/

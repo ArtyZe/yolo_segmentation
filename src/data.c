@@ -736,12 +736,12 @@ image get_segmentation_image2(char *path, int w, int h, int classes)
 
 image load_image_gray(char *path, int w, int h){
     char labelpath[4096];
-    find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath);
+    find_replace(labelpath, "_leftImg8bit.png", "_gtFine_labelIds.png", labelpath);
     find_replace(path, "images", "mask", labelpath);
     find_replace(labelpath, "JPEGImages", "mask", labelpath);
     find_replace(labelpath, ".jpg", ".txt", labelpath);
     find_replace(labelpath, ".JPG", ".txt", labelpath);
-    find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath);
+    find_replace(labelpath, "_leftImg8bit.png", "_gtFine_labelIds.png", labelpath);
     return load_image(labelpath, w, h, 1);
 }
 

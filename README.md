@@ -13,11 +13,11 @@ I will continue to update afterwards, please stay tuned.
 =========
 Train: 
 
-	./darknet segmenter train [data_file path] cfg/segment.cfg [pretrain weights file I gave to you] 
+	./darknet segmenter train cfg/maskyolo.data cfg/instance_segment.cfg [pretrain weights file I gave to you] 
 
 Test:
 
-	./darknet segmenter test [data_file path] cfg/segment.cfg [weights file] [image path]
+	./darknet segmenter test cfg/maskyolo.data cfg/instance_segment.cfg [weights file] [image path]
 
 Merge two images:
 
@@ -29,7 +29,10 @@ Test image:
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/orig.png)
 
 Output image:
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png)
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/output.png)
+
+Merge them together image:
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png)
 
 [Pretrain weights file and cfg file]  
 ========  
@@ -45,7 +48,7 @@ The Way is so easy, you only need three files:
  
 	original colorful image;  
 	
-	0101 binary label image;  
+	label image(pixel value is 0, 1, 2, 3 if you have 3 classes + background);  
 	
 	train.list.
 
@@ -57,13 +60,13 @@ Colorful Original Image:
 
 Lable Image:
 ---------
-I only have one class so the label image with pixels 0101, as 0 is background and 1 is object. If you have 2 classes, the label image pixel value should be 012 and so on:  
+I only have one class so the label image, as 0 is background and others are multi classes. If you have 2 classes, the label image pixel value should be 012 and so on:  
 
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_gtFine_instanceIds.png)
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000000_000019_leftImg8bit.png)
 
 Maybe you can't see the pixels with value 1 because it's close to 0, just see the image below(not for training, just watch as example):  
 
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/zurich_000118_000019_gtFine_instanceIds_1.png)
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000000_000019_gtFine_labelIds.png)
 
 Steps to train you own dataset:  
 -----------------  
@@ -73,7 +76,7 @@ Steps to train you own dataset:
 	    I have added below function call in my code according to my pictures, you have to change it according to your image name  
 		 
 	    #######################################################
-	    find_replace(labelpath, "_leftImg8bit.png", "_gtFine_instanceIds.png", labelpath); 
+	    find_replace(labelpath, "_leftImg8bit.png", "_gtFine_labelIds.png", labelpath); 
 	    #######################################################
 		  
       2. put label images and original images together

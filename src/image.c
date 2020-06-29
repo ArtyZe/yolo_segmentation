@@ -718,9 +718,17 @@ void save_image_png(image im, const char *name)
     sprintf(buff, "%s.png", name);
     unsigned char *data = calloc(im.w*im.h*im.c, sizeof(char));
     int i,k;
-    for(k = 0; k < im.c; ++k){
-        for(i = 0; i < im.w*im.h; ++i){
-            data[i*im.c+k] = (unsigned char) (255*im.data[i + k*im.w*im.h]);
+    if(im.c == 1){
+        for(k = 0; k < im.c; ++k){
+            for(i = 0; i < im.w*im.h; ++i){
+                data[i*im.c+k] = (unsigned char) (im.data[i + k*im.w*im.h]);
+            }
+        }
+    }else{
+        for(k = 0; k < im.c; ++k){
+            for(i = 0; i < im.w*im.h; ++i){
+                data[i*im.c+k] = (unsigned char) (255*im.data[i + k*im.w*im.h]);
+            }
         }
     }
     int success = stbi_write_png(buff, im.w, im.h, im.c, data, im.w*im.c);
@@ -787,8 +795,23 @@ image make_random_image(int w, int h, int c)
 
 image float_to_image(int w, int h, int c, float *data)
 {
-    image out = make_empty_image(w,h,c);
-    out.data = data;
+    printf("c = %d, w = %d, h = %d\n", c, w, h);
+    image out = make_image(w,h,1);
+    for(int ii=0; ii<w*h; ii++){
+        int max_id = 0;
+        float max_value = 0;
+        for(int jj = 0; jj < c; ++jj){
+            if(max_value < data[jj*w*h + ii]){
+                max_value = data[jj*w*h + ii];
+                max_id = jj;
+            }
+        }
+        // printf("the id is %d\n", max_id);
+        // printf("the id is %f\n", (float)max_id);
+        out.data[ii] = (float)max_id;
+        // im_truth.data[ii] = (float)net.truth[ii];
+    }
+    // out.data = data;
     return out;
 }
 

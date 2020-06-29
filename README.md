@@ -33,8 +33,8 @@ Output image:
 
 Merge them together image:(not so good, 1. more epochs; 2. deeper or more complex backbone)
 <figure class="half">
-    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png" width=500/>
-    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png" width=500/>
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png" width=400/>
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png" width=400/>
 </figure>
 
 [Pretrain weights file and cfg file]  

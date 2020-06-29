@@ -33,8 +33,8 @@ Output image:
 
 Merge them together image:(not so good, 1. more epochs; 2. deeper or more complex backbone)
 <certer class="half">
-    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png">
-    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png">
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png" width=00/>
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png" width=200/>
 </certer>
 
 [Pretrain weights file and cfg file]  
@@ -59,7 +59,7 @@ For example with cityscape dataset:
 
 Colorful Original Image:  
 ------------
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/aachen_000000_000019_leftImg8bit.png)
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000000_000019_leftImg8bit.png)
 
 Lable Image:
 ---------

@@ -31,7 +31,6 @@ Merge them together image:(not so good, 1. more epochs; 2. deeper or more comple
     <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/orig.png">
     <!-- <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/orig1.png"> -->
 </center>
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/orig.png)
 
 Output image:(for orig)<center class="half">
     <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/output.png">

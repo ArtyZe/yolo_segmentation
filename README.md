@@ -25,16 +25,23 @@ Merge two images:
 	
 And you will get the mask image named final.png
 
-Test image:  
+Test image:
+Merge them together image:(not so good, 1. more epochs; 2. deeper or more complex backbone)
+<center class="half">
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/orig.png">
+    <!-- <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/orig1.png"> -->
+</center>
 ![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/orig.png)
 
-Output image:
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/output.png)
+Output image:(for orig)<center class="half">
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/output.png">
+    <!-- <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/output1.png"> -->
+</center>
 
 Merge them together image:(not so good, 1. more epochs; 2. deeper or more complex backbone)
 <center class="half">
-    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/pred.png">
-    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/final.png">
+    <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/final.png">
+    <!-- <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/final1.png"> -->
 </center>
 
 [Pretrain weights file and cfg file]  

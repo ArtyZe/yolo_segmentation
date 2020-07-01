@@ -787,21 +787,21 @@ data load_data_seg(int n, char **paths, int m, int w, int h, int classes, int mi
 
         if(flip) flip_image(sized_m);
         d.y.vals[i] = sized_m.data;
-        //show_image(sized_m, "part", 0);
-        //show_image(mask, "mask", 0);
-        //show_image(sized,"size",0);
+        // show_image(sized_m, "part", 0);
+        // show_image(mask, "mask", 0);
+        // show_image(sized,"size",0);
 
         free_image(orig);
         free_image(mask);
 
 
-        /*
-           image rgb = mask_to_rgb(sized_m, classes);
-           show_image(rgb, "part");
-           show_image(sized, "orig");
-           cvWaitKey(0);
-           free_image(rgb);
-         */
+        
+        // image rgb = mask_to_rgb(sized_m);
+        // show_image(rgb, "part",0);
+        // show_image(sized, "orig",0);
+        // // cvWaitKey(0);
+        // free_image(rgb);
+        
     }
     free(random_paths);
     return d;

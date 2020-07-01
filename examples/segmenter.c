@@ -58,6 +58,7 @@ void train_segmenter(char *datacfg, char *cfgfile, char *weightfile, int *gpus, 
     args.saturation = net->saturation;
     args.hue = net->hue;
     args.size = net->w;
+    // args.classes = option_find_int(options, "classes", 1);
     args.classes = 1;
 
     args.paths = paths;
@@ -107,15 +108,20 @@ void train_segmenter(char *datacfg, char *cfgfile, char *weightfile, int *gpus, 
         avg_loss = avg_loss*.9 + loss*.1;
         printf("%ld, %.3f: %f, %f avg, %f rate, %lf seconds, %ld images\n", get_current_batch(net), (float)(*net->seen)/N, loss, avg_loss, get_current_rate(net), what_time_is_it_now()-time, *net->seen);
         free_data(train);
-        if(*net->seen/N > epoch){
-            epoch = *net->seen/N;
-            char buff[256];
-            sprintf(buff, "%s/%s_%d.weights",backup_directory,base, epoch);
-            save_weights(net, buff);
-        }
-        if(get_current_batch(net)%100 == 0){
+        // if(*net->seen/N > epoch){
+        //     epoch = *net->seen/N;
+        //     char buff[256];
+        //     sprintf(buff, "%s/%s_%d.weights",backup_directory,base, epoch);
+        //     save_weights(net, buff);
+        // }
+        if(get_current_batch(net)%50 == 0){
             char buff[256];
             sprintf(buff, "%s/%s.backup",backup_directory,base);
+            save_weights(net, buff);
+        }
+        if(get_current_batch(net)%1000 == 0){
+            char buff[256];
+            sprintf(buff, "%s/%s_%d.weights",backup_directory,base, get_current_batch(net));
             save_weights(net, buff);
         }
     }
@@ -150,7 +156,6 @@ void predict_segmenter(char *datafile, char *cfg, char *weights, char *filename)
         }
         image im = load_image_color(input, 0, 0);
         image sized = letterbox_image(im, net->w, net->h);
-
         float *X = sized.data;
         time=clock();
         float *predictions = network_predict(net, X);

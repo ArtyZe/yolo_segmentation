@@ -777,10 +777,10 @@ __global__ void softmax_x_ent_kernel(int n, float *pred, float *truth, float *de
     if(i < n){
         float t = truth[i];
         float p = pred[i];
-        error[i] = (t) ? -log(p) : 0;
-        if(t>0){
-        printf("the truth label is %f  ------ the pred value is %f\n", t, p);
-        }
+        error[i] = (t) ? -log(p+.0000001) : 0;
+        // if(t>0 && p > 0){
+        //     printf("the truth label is %f  ------ the pred value is %f\n", t, p);
+        // }
         delta[i] = t-p;
     }
 }
@@ -793,9 +793,9 @@ extern "C" void softmax_x_ent_gpu(int n, float *pred, float *truth, float *delta
 
 __global__ void logistic_x_ent_kernel(int n, float *pred, float *truth, float *delta, float *error)
 {
-    int j,k;
+    // int j,k;
     int i = (blockIdx.x + blockIdx.y*gridDim.x) * blockDim.x + threadIdx.x;
-    float t_truth;
+    float t_truth = 1;
     if(i < n){
         //float t = truth[i];
         float p = pred[i];
@@ -1020,6 +1020,94 @@ extern "C" void softmax_gpu(float *input, int n, int batch, int batch_offset, in
     check_error(cudaPeekAtLastError());
 }
 
+__global__ void softmax_instance_folder_kernel(float *input, int n, int batch, int batch_offset, int c, int h, int w, float temp, float *output)
+{
+    int id = (blockIdx.x + blockIdx.y*gridDim.x) * blockDim.x + threadIdx.x;
+    // printf("batch = %d, c = %d, h = %d, w = %d\n", batch,c,h,w);
+    if (id >= batch*h*w) return;
+    // softmax_instance_device(input, n, temp, output, c, h, w);
+    int i, j, k;
+    int b_kernel = id / (h*w);
+    int h_kernel = id % (h*w) / w;
+    int w_kernel = id % (h*w) % w;
+    // if(w_kernel > 0) 
+    // printf("batch = %d, id = %d, h = %d, w = %d\n", b_kernel,id ,h_kernel,w_kernel);
+
+    float largest = -INFINITY;
+    for(i = 0; i < c; ++i){
+        int val = input[i*h*w+h_kernel*w+w_kernel];
+        // printf("input = %f temp = %f\n", input[i*h*w+h_kernel*w+w_kernel], temp);
+        largest = (val>largest) ? val : largest;
+    }
+    // printf("largest = %f\n", largest);
+    float sum = 0;
+    temp = 1;
+    for(j = 0; j < c; ++j){
+        float e = expf(input[j*h*w+h_kernel*w+w_kernel]/temp - largest/temp);
+        // printf("input = %f, largest = %f, output = %f\n", input[j*h*w+h_kernel*w+w_kernel]/temp, largest,e);
+        sum += e;
+        output[j*h*w+h_kernel*w+w_kernel] = e;
+        
+    }
+    for(k = 0; k < c; ++k){
+        output[k*h*w+h_kernel*w+w_kernel] /= sum;
+        // printf("value = %f\n", output[k*h*w+h_kernel*w+w_kernel]);
+    }
+}
+
+extern "C" void softmax_instance_folder_gpu(float *input, int n, int batch, int batch_offset, int c, int h, int w, float temp, float *output)
+{
+    softmax_instance_folder_kernel<<<cuda_gridsize(batch*h*w), BLOCK>>>(input, n, batch, batch_offset, c, h, w, temp, output);
+    check_error(cudaPeekAtLastError());
+}
+
+__device__ void softmax_instance_device(float *input, int n, float temp, float *output, int c, int h, int w)
+{
+    int i, j, k;
+    
+    // for(i = 0; i < n; ++i){
+    //     int val = input[i];
+    //     largest = (val>largest) ? val : largest;
+    // }
+    temp = 1;
+    for (i = 0; i < h; ++i){
+        for (j = 0; j < w; ++j){
+            float largest = -INFINITY;
+            for(k = 0; k < c; ++k){
+                int val = input[k*w*h+i*w+j];
+                largest = (val>largest) ? val : largest;
+            }
+            float sum = 0;
+            for (k = 0; k < c; ++k){
+                float e = expf(input[k*w*h+i*w+j]/temp - largest/temp);
+                sum += e;
+                output[k*w*h+i*w+j] = e;
+            }
+            for (k = 0; k < c; ++k){
+                output[k*w*h+i*w+j] /= sum;
+            }
+        }
+    }
+}
+
+__global__ void softmax_instance_kernel(float *input, int n, int batch, int batch_offset, int c, int h, int w, float temp, float *output)
+{
+    int id = (blockIdx.x + blockIdx.y*gridDim.x) * blockDim.x + threadIdx.x;
+    // printf("batch = %d, c = %d, h = %d, w = %d\n", batch,c,h,w);
+    if (id >= batch) return;
+    softmax_instance_device(input, n, temp, output, c, h, w);
+    // int i, j, k;
+    // int c_kernel = id / (h*w);
+    // int b_kernel = id % (h*w);
+    // int h_kernel = b_kernel / w;
+    // int w_kernel = b_kernel % w;
+}
+
+extern "C" void softmax_instance_gpu(float *input, int n, int batch, int batch_offset, int c, int h, int w, float temp, float *output)
+{
+    softmax_instance_kernel<<<cuda_gridsize(batch), BLOCK>>>(input, n, batch, batch_offset, c, h, w, temp, output);
+    check_error(cudaPeekAtLastError());
+}
 
 __global__ void upsample_kernel(size_t N, float *x, int w, int h, int c, int batch, int stride, int forward, float scale, float *out)
 {

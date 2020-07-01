@@ -118,7 +118,12 @@ void forward_softmax_layer_gpu(const softmax_layer l, network net)
             }
             // printf("the id is %d\n", max_id);
             // printf("the id is %f\n", (float)max_id);
-            im.data[ii] = (float)max_id;
+            if(max_value > 0.05){
+                im.data[ii] = (float)max_id;
+            }else{
+                im.data[ii] = 0;
+            }
+            
             // im_truth.data[ii] = (float)net.truth[ii];
         }
         save_image(im, "output");

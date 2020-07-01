@@ -48,8 +48,8 @@ Merge them together image:(not so good, 1. more epochs; 2. deeper or more comple
 ========  
 
 1. https://www.dropbox.com/sh/9mv29eoy9fa35ie/AAAq-53zo8NuD3cjzWFZfMboa?dl=0
-2. https://pan.baidu.com/s/1vibb9nlfIV3NvBreBSaJbA 
-   password: ncfb
+2. https://pan.baidu.com/s/1hYJ2gpfjZMhOb8uJHQuavw
+   password: y98p
    
 [How to Train with Your Own Dataset ?]  
 ========  

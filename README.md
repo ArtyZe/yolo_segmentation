@@ -65,13 +65,13 @@ For example with cityscape dataset:
 
 Colorful Original Image:  
 ------------
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000000_000019_leftImg8bit.png)
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000001_000019_leftImg8bit.png)
 
 Lable Image:
 ---------
 I only have one class so the label image, as 0 is background and others are multi classes. If you have 2 classes, the label image pixel value should be 012 and so on:  
 
-![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000000_000019_gtFine_labelIds.png)
+![Image text](https://github.com/ArtyZe/yolo_segmentation/blob/master/data/aachen_000001_000019_gtFine_labelIds.png)
 
 Steps to train you own dataset:  
 -----------------  

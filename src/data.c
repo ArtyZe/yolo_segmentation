@@ -756,7 +756,7 @@ data load_data_seg(int n, char **paths, int m, int w, int h, int classes, int mi
     d.X.rows = n;
     d.X.vals = calloc(d.X.rows, sizeof(float*));
     d.X.cols = h*w*3;
-
+    // printf("classes = %d\n", classes);
 
     d.y.rows = n;
     d.y.cols = h*w*classes/div/div;

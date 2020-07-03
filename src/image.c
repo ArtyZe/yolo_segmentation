@@ -806,12 +806,12 @@ image float_to_image(int w, int h, int c, float *data)
                 max_id = jj;
             }
         }
-        // printf("the id is %d\n", max_id);
-        // printf("the id is %f\n", (float)max_id);
-        out.data[ii] = (float)max_id;
-        // im_truth.data[ii] = (float)net.truth[ii];
+        if(max_value > 0.05){
+            out.data[ii] = (float)max_id;
+        }else{
+            out.data[ii] = 0;
+        }
     }
-    // out.data = data;
     return out;
 }
 

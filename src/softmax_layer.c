@@ -102,7 +102,7 @@ void forward_softmax_layer_gpu(const softmax_layer l, network net)
         
         cuda_push_array(truth_temp_gpu, truth_temp, l.batch*l.w*l.h*l.c);
     }
-#if 1
+#if 0
     if(!net.train){
         cuda_pull_array(l.output_gpu, l.output, l.batch*l.inputs);
         image im = make_image(1024, 512, 1);

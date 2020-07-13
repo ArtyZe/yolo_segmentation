@@ -11,7 +11,7 @@ I will continue to update afterwards, please stay tuned.
 
 [The Commond to Run My Project]
 =========
-COmpile: 
+Compile: 
 
 	make -j8
 

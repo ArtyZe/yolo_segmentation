@@ -11,6 +11,10 @@ I will continue to update afterwards, please stay tuned.
 
 [The Commond to Run My Project]
 =========
+COmpile: 
+
+	make -j8
+
 Train: 
 
 	./darknet segmenter train cfg/maskyolo.data cfg/instance_segment.cfg [pretrain weights file I gave to you] 

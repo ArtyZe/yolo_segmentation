@@ -30,7 +30,7 @@ Merge two images:
 And you will get the mask image named final.png
 
 Test image:
-Merge them together image:(not so good, 1. more epochs; 2. deeper or more complex backbone)
+Merge them together image:
 <center class="half">
     <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/orig.png">
     <!-- <img src="https://github.com/ArtyZe/yolo_segmentation/blob/master/result/orig1.png"> -->

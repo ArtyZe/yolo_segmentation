@@ -50,7 +50,7 @@ Merge them together image:(not so good, 1. more epochs; 2. deeper or more comple
 [Pretrain weights file and cfg file]  
 ========  
 1. https://www.dropbox.com/sh/9wrevnyzwfv8hg7/AAA1MJElri9aROsjaPTxO5KCa?dl=0
-2. https://pan.baidu.com/s/15gcrXGzb-fY2vGdl4KlLqgdfa
+2. https://pan.baidu.com/s/15gcrXGzb-fY2vGdl4KlLqg
    password: bk01
    
 [How to Train with Your Own Dataset ?]  

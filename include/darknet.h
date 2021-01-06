@@ -8,6 +8,26 @@
 #define SECRET_NUM -1234
 extern int gpu_index;
 
+#if defined(_MSC_VER)
+#include <time.h>
+#include <windows.h> //I've ommited this line.
+#pragma comment(lib, "pthreadVC2.dll")
+#if defined(_MSC_VER) || defined(_MSC_EXTENSIONS)
+#define DELTA_EPOCH_IN_MICROSECS  11644473600000000Ui64
+#else
+#define DELTA_EPOCH_IN_MICROSECS  11644473600000000ULL
+#include <sys/time.h>
+#endif
+
+struct timezone
+{
+	int  tz_minuteswest; /* minutes W of Greenwich */
+	int  tz_dsttime;     /* type of dst correction */
+};
+
+int gettimeofday(struct timeval *tv, struct timezone *tz);
+#endif
+
 #ifdef GPU
     #define BLOCK 512
 
@@ -764,6 +784,7 @@ image get_image_from_stream(CvCapture *cap);
 #endif
 #endif
 void free_image(image m);
+void copy_image_from_bytes(image im, char *pdata);
 float train_network(network *net, data d);
 pthread_t load_data_in_thread(load_args args);
 void load_data_blocking(load_args args);

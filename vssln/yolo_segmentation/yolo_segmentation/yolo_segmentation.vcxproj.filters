@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\src">
+      <UniqueIdentifier>{83832c52-1555-4a5a-b138-11fb749d7ccd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\examples">
+      <UniqueIdentifier>{c7953811-8254-411c-9350-5856667a5292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\data">
+      <UniqueIdentifier>{85911683-901d-416f-bbfb-b2393c21d2a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\cfg">
+      <UniqueIdentifier>{3562fb0b-a94e-4a49-ab9c-fc82c650c4e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\classifier.h">
+      <Filter>源文件\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\activation_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\activations.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\avgpool_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\batchnorm_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\blas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\box.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\classifier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\col2im.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\connected_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\convolutional_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\cost_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\crnn_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\crop_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\cuda.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\darknet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\data.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\deconvolutional_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\demo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\detection_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\dropout_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\gemm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\gettimeofday.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\gru_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\im2col.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\iseg_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\l2norm_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\local_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\logistic_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\lstm_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\matrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\maxpool_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\network.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\normalization_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\option_list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\region_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reorg_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\rnn_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\route_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\shortcut_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\softmax_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\stb_image_write.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\unistd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\upsample_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\yolo_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\examples\detector.c">
+      <Filter>源文件\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\examples\instance-segmenter.c">
+      <Filter>源文件\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\examples\segmenter.c">
+      <Filter>源文件\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\activation_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\activations.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\avgpool_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\batchnorm_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\blas.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\box.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\col2im.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\connected_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\convolutional_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cost_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\crnn_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\crop_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cuda.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\data.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\deconvolutional_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\demo.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\detection_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\dropout_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gemm.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gru_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\im2col.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\image.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\iseg_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\l2norm_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\list.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\local_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\logistic_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lstm_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\matrix.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\maxpool_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\network.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\normalization_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\option_list.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\parser.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\region_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\reorg_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\rnn_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\route_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\shortcut_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\softmax_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\tree.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\upsample_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\utils.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\yolo_layer.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gettimeofday.c">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\examples\darknet.c">
+      <Filter>源文件\examples</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\data\aachen_000001_000019_gtFine_labelIds.png">
+      <Filter>源文件\data</Filter>
+    </Image>
+    <Image Include="..\..\..\data\aachen_000001_000019_leftImg8bit.png">
+      <Filter>源文件\data</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\data\maskyolo.names">
+      <Filter>源文件\data</Filter>
+    </None>
+    <None Include="..\..\..\cfg\instance_segment.cfg">
+      <Filter>源文件\cfg</Filter>
+    </None>
+    <None Include="..\..\..\cfg\instance_segment_tiny.cfg">
+      <Filter>源文件\cfg</Filter>
+    </None>
+    <None Include="..\..\..\cfg\maskyolo.data">
+      <Filter>源文件\cfg</Filter>
+    </None>
+    <None Include="..\..\..\cfg\segment.cfg">
+      <Filter>源文件\cfg</Filter>
+    </None>
+    <None Include="..\..\..\src\activation_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\avgpool_layer_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\blas_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\col2im.h~">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\col2im_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\convolutional_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\convolutional_layer.h~">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\crop_layer_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\deconvolutional_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\deconvolutional_layer.h~">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\dropout_layer_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\im2col.h~">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\im2col_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\src\maxpool_layer_kernels.cu">
+      <Filter>源文件\src</Filter>
+    </None>
+    <None Include="..\..\..\include\darknet.h~">
+      <Filter>头文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

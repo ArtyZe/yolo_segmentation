@@ -11,9 +11,11 @@
 #include <string.h>
 #include <stdlib.h>
 
+#ifdef GPU
 #include "cuda_runtime.h"
 #include "curand.h"
 #include "cublas_v2.h"
+#endif
 #include <assert.h>
 
 layer make_yolo_layer(int batch, int w, int h, int n, int total, int *mask, int classes)

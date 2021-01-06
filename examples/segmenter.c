@@ -1,5 +1,12 @@
 #include "darknet.h"
+
+#if defined(_MSC_VER) || defined(_MSC_EXTENSIONS)
+#define DELTA_EPOCH_IN_MICROSECS  11644473600000000Ui64
+#else
+#define DELTA_EPOCH_IN_MICROSECS  11644473600000000ULL
 #include <sys/time.h>
+#endif
+
 #include <assert.h>
 
 void train_segmenter(char *datacfg, char *cfgfile, char *weightfile, int *gpus, int ngpus, int clear, int display)

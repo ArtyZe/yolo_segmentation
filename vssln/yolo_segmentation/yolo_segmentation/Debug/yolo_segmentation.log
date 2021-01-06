@@ -1,0 +1,106 @@
+﻿生成启动时间为 2021.01.06 10:40:52。
+     1>项目“D:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\yolo_segmentation\yolo_segmentation.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\install\VC\bin\CL.exe /c /ID:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\..\3rdparty\include /ID:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\..\..\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /D _TIMESPEC_DEFINED /D _CRT_SECURE_NO_WARNINGS /UAVX /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\examples\detector.c "..\..\..\examples\instance-segmenter.c" ..\..\..\examples\segmenter.c ..\..\..\src\activation_layer.c ..\..\..\src\activations.c ..\..\..\src\avgpool_layer.c ..\..\..\src\batchnorm_layer.c ..\..\..\src\blas.c ..\..\..\src\box.c ..\..\..\src\connected_layer.c ..\..\..\src\convolutional_layer.c ..\..\..\src\cost_layer.c ..\..\..\src\crnn_layer.c ..\..\..\src\crop_layer.c ..\..\..\src\data.c ..\..\..\src\deconvolutional_layer.c ..\..\..\src\demo.c ..\..\..\src\detection_layer.c ..\..\..\src\dropout_layer.c ..\..\..\src\gemm.c ..\..\..\src\gru_layer.c ..\..\..\src\image.c ..\..\..\src\iseg_layer.c ..\..\..\src\l2norm_layer.c ..\..\..\src\layer.c ..\..\..\src\list.c ..\..\..\src\local_layer.c ..\..\..\src\logistic_layer.c ..\..\..\src\lstm_layer.c ..\..\..\src\matrix.c ..\..\..\src\maxpool_layer.c ..\..\..\src\network.c ..\..\..\src\normalization_layer.c ..\..\..\src\option_list.c ..\..\..\src\parser.c ..\..\..\src\region_layer.c ..\..\..\src\reorg_layer.c ..\..\..\src\rnn_layer.c ..\..\..\src\route_layer.c ..\..\..\src\shortcut_layer.c ..\..\..\src\softmax_layer.c ..\..\..\src\tree.c ..\..\..\src\upsample_layer.c ..\..\..\src\utils.c ..\..\..\src\yolo_layer.c
+         yolo_layer.c
+     1>d:\study\code_framework\yolo_segmentation\src\yolo_layer.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         utils.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         upsample_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         tree.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         softmax_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         shortcut_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         route_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         rnn_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         reorg_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         region_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         parser.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         option_list.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         normalization_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         network.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         maxpool_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         matrix.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         lstm_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         logistic_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         local_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         list.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         正在生成代码...
+         正在编译...
+         layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         l2norm_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         iseg_layer.c
+     1>d:\study\code_framework\yolo_segmentation\src\iseg_layer.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         image.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         gru_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         gemm.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         dropout_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         detection_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         demo.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         deconvolutional_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         data.c
+     1>d:\study\code_framework\yolo_segmentation\src\data.h(3): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         crop_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         crnn_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         cost_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         convolutional_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         connected_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         box.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         blas.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         batchnorm_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         avgpool_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         正在生成代码...
+         正在编译...
+         activations.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         activation_layer.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         segmenter.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         instance-segmenter.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         detector.c
+     1>d:\study\code_framework\yolo_segmentation\include\darknet.h(6): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+         正在生成代码...
+     1>已完成生成项目“D:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\yolo_segmentation\yolo_segmentation.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:03.49

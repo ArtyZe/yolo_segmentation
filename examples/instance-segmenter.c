@@ -1,5 +1,12 @@
 #include "darknet.h"
+
+#if defined(_MSC_VER) || defined(_MSC_EXTENSIONS)
+#define DELTA_EPOCH_IN_MICROSECS  11644473600000000Ui64
+#else
+#define DELTA_EPOCH_IN_MICROSECS  11644473600000000ULL
 #include <sys/time.h>
+#endif
+
 #include <assert.h>
 
 void normalize_image2(image p);

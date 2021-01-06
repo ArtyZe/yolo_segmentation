@@ -3,11 +3,16 @@
 #include <string.h>
 #include <math.h>
 #include <assert.h>
-#include <unistd.h>
+//#include <unistd.h>
 #include <float.h>
 #include <limits.h>
 #include <time.h>
+
+#ifdef WIN32
+#include "gettimeofday.h"
+#else
 #include <sys/time.h>
+#endif
 
 #include "utils.h"
 
@@ -69,29 +74,6 @@ int *read_map(char *filename)
         map[n-1] = atoi(str);
     }
     return map;
-}
-
-void sorta_shuffle(void *arr, size_t n, size_t size, size_t sections)
-{
-    size_t i;
-    for(i = 0; i < sections; ++i){
-        size_t start = n*i/sections;
-        size_t end = n*(i+1)/sections;
-        size_t num = end-start;
-        shuffle(arr+(start*size), num, size);
-    }
-}
-
-void shuffle(void *arr, size_t n, size_t size)
-{
-    size_t i;
-    void *swp = calloc(1, size);
-    for(i = 0; i < n-1; ++i){
-        size_t j = i + rand()/(RAND_MAX / (n-i)+1);
-        memcpy(swp,          arr+(j*size), size);
-        memcpy(arr+(j*size), arr+(i*size), size);
-        memcpy(arr+(i*size), swp,          size);
-    }
 }
 
 int *random_index_order(int min, int max)

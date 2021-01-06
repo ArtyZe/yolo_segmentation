@@ -1,8 +1,10 @@
 # yolo_segmentation
 ![GitHub stars](https://img.shields.io/github/stars/ArtyZe/yolo_segmentation) ![GitHub forks](https://img.shields.io/github/forks/ArtyZe/yolo_segmentation)  ![GitHub watchers](https://img.shields.io/github/watchers/ArtyZe/yolo_segmentation)
-The code is to get segmentation image by darknet
+
 
 ![](https://img.shields.io/badge/LinuxCPU-Pass-brightgreen.svg?style=plastic) ![](https://img.shields.io/badge/LinuxGPU-Pass-brightgreen.svg?style=plastic) ![](https://img.shields.io/badge/WindowsCPU-Pass-brightgreen.svg?style=plastic)
+
+The code is to get segmentation image by darknet
 
 In the process of my project, I have referenced nithi89/unet_darknet in some points and nithilan has give me many important  
 

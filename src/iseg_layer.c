@@ -77,7 +77,7 @@ void resize_iseg_layer(layer *l, int w, int h)
 
 void forward_iseg_layer(const layer l, network net)
 {
-
+    /*
     double time = what_time_is_it_now();
     int i,b,j,k;
     int ids = l.extra;
@@ -169,12 +169,16 @@ void forward_iseg_layer(const layer l, network net)
                     for(j = 0; j < 90; ++j){
                         if(!l.counts[j])continue;
                         int z;
-                        for(z = 0; z < ids; ++z){
-                            int index = b*l.outputs + (l.classes + z)*l.w*l.h + k;
+                        for (z = 0; z < ids; ++z) {
+                            int index = b * l.outputs + (l.classes + z) * l.w * l.h + k;
                             float diff = l.sums[j][z] - l.output[index];   //用所有id层的所有目标区域的和减去在该层的k点的输出值
-                            if (j == i) l.delta[index] +=   diff < 0? -.1 : .1;
-                            else        l.delta[index] += -(diff < 0? -.1 : .1);   //这里是算法的关键，将第id层的不同目标区域分开，也就是car1和car2的输出区域区分开；同时用ids*l.counts维
-                        }                                                          //度的向量去表示一个目标，这也是一种降维的方式
+                            if (j == i) {
+                                l.delta[index] += diff < 0 ? -.1 : .1;
+                            }
+                            else {
+                                l.delta[index] += -(diff < 0 ? -.1 : .1);   //这里是算法的关键，将第id层的不同目标区域分开，也就是car1和car2的输出区域区分开；同时用ids*l.counts维
+                            }                                                          //度的向量去表示一个目标，这也是一种降维的方式
+                        }
                     }
                 }
             }
@@ -190,6 +194,7 @@ void forward_iseg_layer(const layer l, network net)
 
     *(l.cost) = pow(mag_array(l.delta, l.outputs * l.batch), 2);
     printf("took %lf sec\n", what_time_is_it_now() - time);
+    */
 }
 
 void backward_iseg_layer(const layer l, network net)

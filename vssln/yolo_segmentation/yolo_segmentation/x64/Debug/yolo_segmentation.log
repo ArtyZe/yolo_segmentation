@@ -1,5 +1,62 @@
-﻿D:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\..\3rdparty\pthreads\bin\pthreadVC2.dll : warning LNK4003: 无效的库格式；已忽略库
-D:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\..\3rdparty\pthreads\bin\pthreadVC2.dll : warning LNK4003: 无效的库格式；已忽略库
-D:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\..\3rdparty\pthreads\bin\pthreadVC2.dll : warning LNK4003: 无效的库格式；已忽略库
-D:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\..\3rdparty\pthreads\bin\pthreadVC2.dll : warning LNK4003: 无效的库格式；已忽略库
-  yolo_segmentation.vcxproj -> D:\study\code_framework\yolo_segmentation\vssln\yolo_segmentation\/../yolo_segmentation.exe
+﻿  iseg_layer.c
+D:\study\yolo_segmentation\src\iseg_layer.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\study\yolo_segmentation\include\activations.h(22,37): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(23,38): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(21,1): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(32,72): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(33,73): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(35,81): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(36,69): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(37,63): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(38,68): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(39,76): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(42,36): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(43,40): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(44,23): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(49,28): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(50,36): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(56,16): warning C4305: “return”: 从“double”到“float”截断
+D:\study\yolo_segmentation\include\activations.h(68,1): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(76,56): warning C4244: “return”: 从“int”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(78,67): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(79,59): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(80,66): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(82,80): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+  yolo_layer.c
+D:\study\yolo_segmentation\src\yolo_layer.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\study\yolo_segmentation\include\activations.h(22,37): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(23,38): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(21,1): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(32,72): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(33,73): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(35,81): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(36,69): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(37,63): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(38,68): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(39,76): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(42,36): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(43,40): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(44,23): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(49,28): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(50,36): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(56,16): warning C4305: “return”: 从“double”到“float”截断
+D:\study\yolo_segmentation\include\activations.h(68,1): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(76,56): warning C4244: “return”: 从“int”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(78,67): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(79,59): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(80,66): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\include\activations.h(82,80): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\src\yolo_layer.c(108,38): warning C4244: “函数”: 从“float”转换到“int”，可能丢失数据
+D:\study\yolo_segmentation\src\yolo_layer.c(108,39): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\src\yolo_layer.c(124,103): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\src\yolo_layer.c(204,69): warning C4244: “函数”: 从“float”转换到“int”，可能丢失数据
+D:\study\yolo_segmentation\src\yolo_layer.c(211,63): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\src\yolo_layer.c(216,12): warning C4477: “printf”: 格式字符串“%f”需要类型“double”的参数，但可变参数 1 拥有了类型“int”
+D:\study\yolo_segmentation\src\yolo_layer.c(216,81): warning C4474: printf: 格式字符串中传递的参数太多
+D:\study\yolo_segmentation\src\yolo_layer.c(216,81): message : 占位符和其参数预计 2 可变参数，但提供的却是 3 参数
+D:\study\yolo_segmentation\src\yolo_layer.c(238,68): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\src\yolo_layer.c(239,68): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\study\yolo_segmentation\src\yolo_layer.c(289,49): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  正在生成代码...
+D:\study\yolo_segmentation\vssln\yolo_segmentation\..\3rdparty\pthreads\bin\pthreadVC2.dll : warning LNK4003: 无效的库格式；已忽略库
+  yolo_segmentation.vcxproj -> D:\study\yolo_segmentation\vssln\yolo_segmentation.exe
